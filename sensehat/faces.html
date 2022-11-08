@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- <link href="css/main.css" rel="stylesheet"> -->
+    <title>Tools</title>
+  </head>
+  <body>
+    <section class="container">
+        <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+            <h1>SenseHAT - faces.py</h1>
+            <section class="mt-3">
+                <a class="btn btn-dark" id="python-clipboard">Copy to Clipboard</a>
+            </section>
+            <section class="mt-3">
+                <textarea cols="40" rows="10" id="python-script"></textarea>
+            </section>
+            <section class="mt-3 text-center">
+                <span>Or run the following in terminal</span><br/>
+                <code>wget http://rpf.io/shfaces -O faces.py</code>
+            </section>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('load', (event) => {
+            document.getElementById("python-script").value = `e = (0, 0, 0)  # empty
+red = (255, 0, 0)  # red
+green = (0, 255, 0)  # green
+blue = (0, 0, 255)  # blue
+
+c = blue
+normal = [
+    e, e, e, e, e, e, e, e,
+    e, e, e, e, e, e, e, e,
+    e, e, c, e, e, c, e, e,
+    e, e, e, e, e, e, e, e,
+    e, e, e, e, e, e, e, e,
+    e, c, c, c, c, c, c, e,
+    e, e, e, e, e, e, e, e,
+    e, e, e, e, e, e, e, e,
+]
+c = green
+happy = [
+    e, e, e, e, e, e, e, e,
+    e, e, e, e, e, e, e, e,
+    e, e, c, e, e, c, e, e,
+    e, e, e, e, e, e, e, e,
+    e, e, e, e, e, e, e, e,
+    e, c, e, e, e, e, c, e,
+    e, c, c, c, c, c, c, e,
+    e, e, e, e, e, e, e, e,
+]
+c = red
+sad = [
+    e, e, e, e, e, e, e, e,
+    e, e, e, e, e, e, e, e,
+    e, e, c, e, e, c, e, e,
+    e, e, e, e, e, e, e, e,
+    e, e, e, e, e, e, e, e,
+    e, c, c, c, c, c, c, e,
+    e, c, e, e, e, e, c, e,
+    e, e, e, e, e, e, e, e,
+]
+`;
+            document.getElementById("python-clipboard").onclick = function(){
+                document.getElementById("python-script").select();
+                document.execCommand('copy');
+            }
+        });
+    </script>
+  </body>
+</html>
