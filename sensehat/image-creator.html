@@ -185,9 +185,12 @@
 
             // Prevent anything other than characters from being in the variable names
             document.querySelector("section#colours-section").addEventListener("keydown",(e) => {
-                // if (isNaN()) e.preventDefault(); for numbers
-                if (String.fromCharCode(e.which).search("[A-z]")) { e.preventDefault(); } 
-                if (e.which >= 96 && e.which <= 111) { e.preventDefault(); } // Block stupid numpads...
+                if (e.target.className == "colourName") {
+                    if (String.fromCharCode(e.which).search("[A-z]")) { e.preventDefault(); } 
+                    if (e.which >= 96 && e.which <= 111) { e.preventDefault(); } // Block stupid numpads...
+                } else if (e.target.className.includes("colourInput")) {
+                    if (isNaN(String.fromCharCode(e.which))) e.preventDefault();
+                }
             });
         });
     </script>
