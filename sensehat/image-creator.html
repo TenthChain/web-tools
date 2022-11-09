@@ -199,6 +199,19 @@
                     if (isNaN(String.fromCharCode(e.which))) e.preventDefault();
                 }
             });
+
+            document.querySelector("section#colours-section").addEventListener("change",(e) => {
+                try {
+                    parseInt(e.target.value)
+                } catch (error) {
+                    console.error(error);
+                    e.target.value = 0;
+                }
+                if (parseInt(e.target.value) < 0) { e.target.value = 0; return; } 
+                if (parseInt(e.target.value) > 255) { e.target.value = 255; return; } 
+                console.log(e.target);
+            });
+
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
