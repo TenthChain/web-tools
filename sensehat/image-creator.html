@@ -183,6 +183,13 @@
                 });
             });
 
+            document.getElementById("addNewColour").addEventListener("click", (event) => {
+                var temp = document.getElementsByTagName("template")[0];
+                var cloned = temp.content.cloneNode(true);
+                document.getElementById("colours-section").appendChild(cloned);
+                document.getElementById("noColoursAvailable").style.display = "none";
+            });
+
             // Prevent anything other than characters from being in the variable names
             document.querySelector("section#colours-section").addEventListener("keydown",(e) => {
                 if (e.target.className == "colourName") {
