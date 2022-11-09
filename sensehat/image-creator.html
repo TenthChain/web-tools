@@ -182,6 +182,13 @@
                     console.log(`[${event.target.attributes["R"]}, ${event.target.attributes["G"]}, ${event.target.attributes["B"]}]`);
                 });
             });
+
+            // Prevent anything other than characters from being in the variable names
+            document.querySelector("section#colours-section").addEventListener("keydown",(e) => {
+                // if (isNaN()) e.preventDefault(); for numbers
+                if (String.fromCharCode(e.which).search("[A-z]")) { e.preventDefault(); } 
+                if (e.which >= 96 && e.which <= 111) { e.preventDefault(); } // Block stupid numpads...
+            });
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
