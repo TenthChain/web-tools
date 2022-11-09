@@ -115,9 +115,12 @@
             console.log("Loaded!")
             let paintPixels = document.querySelectorAll("td.painting");
             paintPixels.forEach((element, index) => {
+                element.attributes["R"] = 0;
+                element.attributes["G"] = 0;
+                element.attributes["B"] = 0;
                 element.addEventListener("click", (event) => {
-                    console.log(event.target);
-                    event.target.style.backgroundColor = "black";
+                    
+                    console.log(`[${event.target.attributes["R"]}, ${event.target.attributes["G"]}, ${event.target.attributes["B"]}]`);
                 });
             });
         });
