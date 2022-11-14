@@ -207,6 +207,11 @@
             });
 
             document.querySelector("section#colours-section").addEventListener("change",(e) => {
+                if (e.target.value == '') {
+                    e.target.value = 0;
+                    return;
+                }
+
                 try {
                     parseInt(e.target.value)
                 } catch (error) {
