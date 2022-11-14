@@ -196,7 +196,9 @@
 
             // Prevent anything other than characters from being in the variable names
             document.querySelector("section#colours-section").addEventListener("keydown",(e) => {
-                if (e.target.className == "colourName") {
+                if (e.which == 8) {
+                    return;
+                } else if (e.target.className == "colourName") {
                     if (String.fromCharCode(e.which).search("[A-z]")) { e.preventDefault(); } 
                     if (e.which >= 96 && e.which <= 111) { e.preventDefault(); } // Block stupid numpads...
                 } else if (e.target.className.includes("colourInput")) {
