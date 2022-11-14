@@ -221,6 +221,11 @@
                 if (parseInt(e.target.value) < 0) { e.target.value = 0; return; } 
                 if (parseInt(e.target.value) > 255) { e.target.value = 255; return; }
             });
+
+            document.querySelector("section#colours-section").addEventListener("change",(e) => {
+                var parentElement = e.target.parentElement;
+                var rgb = parentElement.querySelectorAll("input.colourInput");
+                parentElement.querySelector("td").style.backgroundColor = `rgba(${rgb[0].value},${rgb[1].value},${rgb[2].value},255)`;
             });
 
         });
