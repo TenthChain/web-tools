@@ -168,7 +168,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;
                     <input type="number" class="colourInput b"value="255"/>
                     &nbsp;
-                    <button>Select</button>
+                    <button class="selectColour">Select</button>
                     &nbsp;
                 </div>
             </template>
@@ -227,6 +227,10 @@
                 var parentElement = e.target.parentElement;
                 var rgb = parentElement.querySelectorAll("input.colourInput");
                 parentElement.querySelector("td").style.backgroundColor = `rgba(${rgb[0].value},${rgb[1].value},${rgb[2].value},255)`;
+            });
+
+            document.querySelector("section#colours-section").addEventListener("click",(e) => {
+                console.log(e.target);
             });
 
         });
