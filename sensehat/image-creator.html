@@ -154,7 +154,7 @@
                     <button id="addNewColour" style="margin-left: 58%;">Add New Colour</button>
                 </div>
                 <!-- Initial colour card for painting white -->
-                <div class="card selectedColour initialColour" style="display: none;">
+                <div class="card colour selectedColour initialColour">
                     &nbsp;
                     <table>
                         <td class="preview"></td>
@@ -172,9 +172,9 @@
                     &nbsp;
                 </div>
             </section>
-            <!-- Template colour card for painting -->
+            <!-- Template colour card for cloning -->
             <template>
-                <div class="card">
+                <div class="card colour">
                     &nbsp;
                     <table>
                         <td class="preview"></td>
@@ -221,6 +221,8 @@
                     event.target.attributes["G"] = rgb[1].value;
                     event.target.attributes["B"] = rgb[2].value;
                 });
+
+                element.click();
             });
 
             // On Add new colour button click
