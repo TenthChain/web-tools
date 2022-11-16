@@ -152,10 +152,7 @@
                 <div class="card">
                     <span>Colours</span>
                     <button id="addNewColour" style="margin-left: 58%;">Add New Colour</button>
-                    <input value="" style="display: none;"/>
                 </div>
-                <!-- Prompt for telling user no colours have been created -->
-                <div id="noColoursAvailable">No colours</div>
                 <!-- Initial colour card for painting white -->
                 <div class="card selectedColour initialColour" style="display: none;">
                     &nbsp;
@@ -233,9 +230,6 @@
                 const temp = document.getElementsByTagName("template")[0];
                 const cloned = temp.content.cloneNode(true);
                 document.getElementById("colours-section").appendChild(cloned);
-
-                // Remove the placeholder saying there are no colours created
-                document.getElementById("noColoursAvailable").style.display = "none";
             });
 
             // Prevent anything other than characters from being in the variable names
