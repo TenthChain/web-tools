@@ -148,13 +148,14 @@
                     </table>
                 </section>
             </section>
-            <section id="colours-section" class="mt-3">
+            <button id="generateCodeButton" class="mt-2">Generate Python Code</button>
+            <section id="colours-section" class="mt-2">
                 <div class="card">
                     <span>Colours</span>
                     <button id="addNewColour" style="margin-left: 58%;">Add New Colour</button>
                 </div>
                 <!-- Initial colour card for painting white -->
-                <div class="card colour selectedColour initialColour">
+                <div class="card colour selectedColour">
                     &nbsp;
                     <table>
                         <td class="preview"></td>
@@ -295,6 +296,29 @@
                     // Set the selected colour button as selected
                     e.target.parentElement.classList.add("selectedColour");
                 }  
+            });
+
+            document.getElementById("generateCodeButton").addEventListener("click",(e) => {
+
+                let script = `from sense_hat import SenseHat\nsense = SenseHat()\n\n`;
+
+                const colourListElements = document.querySelectorAll("div.card.colour");
+                let colourList = [];
+
+                colourList.forEach((e, i) => {
+                    colourList.add
+
+                });
+
+                // Get all pixels and loop through them
+                const paintPixels = document.querySelectorAll("td.painting");
+                paintPixels.forEach((element, index) => {
+                    // Set their default RGB values to 0
+                    const r = element.attributes["R"];
+                    const g = element.attributes["G"];
+                    const b = element.attributes["B"];
+                });
+
             });
         });
     </script>
