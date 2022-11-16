@@ -252,6 +252,8 @@
                 if (parseInt(e.target.value) > 255) { e.target.value = 255; return; }
             });
 
+            document.querySelector("section#colours-section").addEventListener('paste', e => e.preventDefault());
+
             document.querySelector("section#colours-section").addEventListener("change",(e) => {
                 var parentElement = e.target.parentElement;
                 var rgb = parentElement.querySelectorAll("input.colourInput");
