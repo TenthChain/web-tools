@@ -205,15 +205,22 @@
     </section>
     <script lang="text/js">
         window.addEventListener('load', (event) => {
-            console.log("Loaded!")
+
             let paintPixels = document.querySelectorAll("td.painting");
             paintPixels.forEach((element, index) => {
+
                 element.attributes["R"] = 0;
                 element.attributes["G"] = 0;
                 element.attributes["B"] = 0;
+
                 element.addEventListener("click", (event) => {
-                    
-                    console.log(`[${event.target.attributes["R"]}, ${event.target.attributes["G"]}, ${event.target.attributes["B"]}]`);
+                    const selectedColourElement = document.querySelector("div.card.selectedColour");
+
+                    var rgb = selectedColourElement.querySelectorAll("input.colourInput");
+                    event.target.style.backgroundColor = `rgba(${rgb[0].value},${rgb[1].value},${rgb[2].value},255)`;
+                    event.target.attributes["R"] = rgb[0].value;
+                    event.target.attributes["G"] = rgb[1].value;
+                    event.target.attributes["B"] = rgb[2].value;
                 });
             });
 
