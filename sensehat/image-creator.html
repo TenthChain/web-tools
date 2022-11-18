@@ -302,12 +302,18 @@
 
                 let script = `from sense_hat import SenseHat\nsense = SenseHat()\n\n`;
 
-                const colourListElements = document.querySelectorAll("div.card.colour");
-                let colourList = [];
+                let pixelList = [];
+                let variableList = [];
+                
+                document.querySelectorAll("section#colours-section > div.card.colour").forEach((element) => {
+                    const rgb = element.querySelectorAll("input.colourInput");
 
-                colourList.forEach((e, i) => {
-                    colourList.add
-
+                    variableList.push({
+                        name: element.querySelector("div.colourName").textContent,
+                        R: rgb[0].value,
+                        G: rgb[1].value,
+                        B: rgb[2].value
+                    });
                 });
 
                 // Get all pixels and loop through them
