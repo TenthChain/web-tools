@@ -320,7 +320,14 @@
                 const paintPixels = document.querySelectorAll("td.painting");
                 paintPixels.forEach((pixel) => {
                     
-                    
+                    let selectedColour = "";
+
+                    for (let index = 0; index < variableList.length; index++) {
+                        const colour = variableList[index];
+                        if (colour.R == pixel.attributes["R"] && colour.G == pixel.attributes["G"] && colour.B == pixel.attributes["B"]) {
+                            selectedColour = colour.name;
+                        }
+                    }
                 });
 
                 console.log(variableList);
