@@ -362,6 +362,12 @@
                     } else {
                         script += ",";
                     }
+
+                    if (index + 1 == 64) {
+                        continue;
+                    } else if ((index + 1) % 8 == 0) {
+                        script += "\n\t";
+                    }
                 }
                 
                 script += "\n])";
