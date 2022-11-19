@@ -356,6 +356,12 @@
                     } else {
                         script += `[${pixel.R},${pixel.G},${pixel.B}]`;
                     }
+
+                    if (index + 1 == 64) {
+                        continue;
+                    } else {
+                        script += ",";
+                    }
                 }
                 
                 script += "\n])";
