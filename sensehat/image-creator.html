@@ -347,6 +347,18 @@
                     script += `${colour.name} = [${colour.R},${colour.G},${colour.B}]\n`;
                 });
 
+                script += "\nsense.set_pixels([\n\t";
+
+                for (let index = 0; index < pixelList.length; index++) {
+                    const pixel = pixelList[index];
+                    if (pixel.name != "") {
+                        script += `${pixel.name}`;
+                    } else {
+                        script += `[${pixel.R},${pixel.G},${pixel.B}]`;
+                    }
+                }
+                
+                script += "\n])";
 
                 console.log(script);
 
