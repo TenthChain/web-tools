@@ -330,7 +330,7 @@
                     }
 
                     pixelList.push({
-                        variableName: selectedColour,
+                        name: selectedColour,
                         R: pixel.attributes["R"],
                         G: pixel.attributes["G"],
                         B: pixel.attributes["B"]
@@ -343,6 +343,9 @@
 
                 script += "# Variables \n"
 
+                variableList.forEach((colour) => {
+                    script += `${colour.name} = [${colour.R},${colour.G},${colour.B}]\n`;
+                });
 
 
                 console.log(script);
