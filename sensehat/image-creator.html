@@ -206,14 +206,11 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="codeOutputModalTitle">Code</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h5 class="modal-title" id="codeOutputModalTitle">Generated Code</h5>
                     </div>
                     <div class="modal-body">
-                        <span>Your code</span>
-                        <textarea id="codeOutput">Generating code...</textarea>
+                        <textarea id="codeOutput" class="w-100">Generating code...</textarea>
+                        <a class="btn btn-primary w-100 mt-1" id="copyCodeToClipboard">Copy code to clipboard</a>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
