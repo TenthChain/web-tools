@@ -362,10 +362,6 @@
                     });
                 });
 
-                console.log(variableList);
-
-                console.log(pixelList);
-
                 script += "# Variables \n"
 
                 variableList.forEach((colour) => {
@@ -396,8 +392,6 @@
                 }
                 
                 script += "\n])";
-
-                console.log(script);
 
                 document.querySelector("button#codeOutputModalButton").click();
             });
